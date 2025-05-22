@@ -1,0 +1,593 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+html,
+body {
+  height: auto;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  background-color: black;
+  overflow: auto;
+}
+
+/* Section Layout */
+.black-scroll-break {
+  height: 30vh; /* change to 20vh or 40vh depending on scroll speed */
+  background-color: black;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hero-section video.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.black-transition {
+  height: 100vh;
+  background-color: black;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Top Header */
+.top-header {
+  background-color: #000;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+}
+
+.top-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.top-logo {
+  height: 38px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 1px);
+}
+
+.top-left,
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.top-left a,
+.top-right a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.top-left a.active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.top-left a:hover,
+.top-right a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.divider {
+  margin: 0 3px;
+  color: #666;
+}
+
+.top-right a:first-child {
+  margin-right: 24px;
+}
+
+.spaced-link {
+  margin-left: 24px;
+}
+
+.top-right i {
+  margin-left: 2px;
+  margin-right: 0;
+  font-size: 12px;
+}
+
+/* Main Navigation */
+.main-nav {
+  position: fixed;
+  top: 68px;
+  padding: 18px 0;
+  width: 100%;
+  z-index: 15;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  opacity: 1;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.main-nav ul:hover a {
+  opacity: 0.3;
+  color: #888;
+}
+
+.main-nav ul a:hover {
+  opacity: 1 !important;
+  color: #fff;
+}
+
+/* Overlay Text */
+.overlay {
+  position: absolute;
+  top: 58%;
+  left: 8%;
+  transform: translateY(-50%);
+  max-width: 620px;
+  z-index: 5;
+}
+
+.overlay h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  line-height: 1.15;
+  text-transform: uppercase;
+  max-width: 620px;
+  letter-spacing: 0.2px;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.overlay p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 5px #000;
+}
+
+.overlay button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.95rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.overlay button i {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transform: translateY(1px);
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.overlay button:hover {
+  background-color: #0078d4;
+  color: white;
+}
+
+.overlay button:hover i {
+  color: white;
+  opacity: 1;
+}
+
+.top-left,
+.top-right,
+.main-nav {
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.scroll-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+.scroll-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Grid Section Layout with Videos */
+.grid-section {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px 40px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-category {
+  font-size: 14px;
+  color: #111;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+}
+
+.grid-title {
+  font-size: 26px;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", serif;
+  color: #111;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+}
+
+.video-wrapper {
+  width: 85%;
+  max-width: 400px;
+  height: auto;
+  overflow: hidden;
+  margin-top: 10px;
+  cursor: pointer; /* 🔥 Add this line */
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.video-wrapper:hover video {
+  transform: scale(1.12); /* increased from 1.05 to 1.12 */
+}
+
+.grid-title:hover,
+.grid-category:hover {
+  cursor: pointer;
+}
+
+.feature-section {
+  background-color: #000;
+  color: white;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.feature-content {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px; /* ⬅️ Increase gap from 60px or 80px */
+  padding: 0 60px; /* ⬅️ Add if not present */
+  flex-wrap: wrap;
+}
+
+.feature-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.feature-category {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+.feature-title {
+  font-family: "Georgia", serif;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffff;
+  margin-bottom: 180px;
+}
+
+.feature-description {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.feature-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.95rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.feature-button i {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  transform: translateY(1px);
+  transition: color 0.3s, opacity 0.3s;
+}
+
+.feature-button:hover {
+  background-color: #0078d4;
+  color: white;
+}
+
+.feature-button:hover i {
+  color: white;
+  opacity: 1;
+}
+
+.feature-media {
+  flex: 1;
+  position: relative;
+  transform: translateY(-100px); /* Adjust this value as needed */
+}
+
+.feature-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.follow-section {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.follow-heading {
+  font-family: "Helvetica Neue", serif;
+  font-size: 56px; /* 🔼 Increased from 36px */
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 120px; /* 🔼 Increased from 40px */
+  font-size: 36px; /* 🔼 Increased from 28px */
+}
+
+.social-icons a {
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #555; /* Dark grey, subtle hover effect */
+  transition: color 0.3s ease;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-start;
+  padding: 80px 100px;
+  background-color: #000;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-size: 48px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.footer-heading.inactive {
+  color: #555;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 12px;
+}
+
+.footer-column a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-column a i {
+  font-size: 18px;
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: #fff;
+}
+
+.footer-column a:hover i {
+  color: #fff;
+}
+
+/* ===================== */
+/* 📱 Responsive Styling  */
+/* ===================== */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .overlay h1 {
+    font-size: 32px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .overlay button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  /* Grid Section */
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .grid-title {
+    font-size: 20px;
+  }
+
+  /* Feature Section */
+  .feature-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .feature-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .feature-description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .feature-media {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .feature-button {
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+  /* Follow Section */
+  .follow-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .social-icons {
+    gap: 30px;
+    font-size: 26px;
+    flex-wrap: wrap;
+  }
+
+  /* Footer Links */
+  .footer-links {
+    padding: 60px 20px;
+  }
+
+  .footer-heading {
+    font-size: 28px;
+  }
+
+  .footer-column a {
+    font-size: 16px;
+  }
+
+  .top-left,
+  .top-right {
+    display: none;
+  }
+
+  .extra-nav-links {
+    display: none;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
