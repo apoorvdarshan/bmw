@@ -6,11 +6,11 @@ This is not a clone — it’s a visual remix that brings BMW's clean branding i
 
 ## 🔗 Live Preview
 
-🌐 [https://bmw.aopv.dev](https://bmw.aopv.dev)
+🌐 [https://bmw.apoorvdarshan.com](https://bmw.apoorvdarshan.com)
 
 ## 💻 Source Code
 
-📂 [https://github.com/aopv/bmw](https://github.com/aopv/bmw)
+📂 [https://github.com/apoorvdarshan/bmw](https://github.com/apoorvdarshan/bmw)
 
 ---
 
@@ -52,5 +52,5 @@ Let’s connect and build more beautiful web experiences.
 
 ## 💬 Connect
 
-Made by [Apoorv Darshan](https://github.com/aopv)  
+Made by [Apoorv Darshan](https://github.com/apoorvdarshan)  
 Open to feedback, forks, and improvements!
